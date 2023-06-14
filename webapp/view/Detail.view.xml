@@ -1,0 +1,78 @@
+<mvc:View
+    controllerName="projecterp.controller.Detail"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:SemanticPage
+        id="detailPage"
+        busy="{detailView>/busy}"
+         busyIndicatorDelay="{detailView>/delay}"
+        showFooter="true">
+        <semantic:titleHeading>
+            <Title id="_IDGenTitle1"
+                text="{Title}"
+                level="H2"/>
+        </semantic:titleHeading>
+       
+        <semantic:content>
+
+        </semantic:content>
+        <!--Semantic ShareMenu Buttons-->
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction
+                id="shareEmail"
+                press=".onSendEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <semantic:closeAction>
+            <semantic:CloseAction
+                    id="closeColumn"
+                    press=".onCloseDetailPress"/>
+        </semantic:closeAction>
+
+        <semantic:fullScreenAction>
+            <semantic:FullScreenAction
+                    id="enterFullScreen"
+                    visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+                    press=".toggleFullScreen"/>
+        </semantic:fullScreenAction>
+        <semantic:exitFullScreenAction>
+            <semantic:ExitFullScreenAction
+                    id="exitFullScreen"
+                    visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+                    press=".toggleFullScreen"/>
+        </semantic:exitFullScreenAction>
+
+
+
+        <semantic:content>
+             <f:SimpleForm id="_IDGenSimpleForm1">
+                <f:content>
+                    <Label id="_IDGenLabel1" text="{i18n>id}" />
+                    <Text id="_IDGenText1" text="{ID}" />
+                    <Label id="_IDGenLabel2" text="{i18n>type}" />
+                    <Input id="_IDGenInput1" value="{Type}" />
+                    <Label id="_IDGenLabel3" text="{i18n>mov_date}." />
+                    <Input id="_IDGenInput2" value="{Datum}" />
+                    <Label id="_IDGenLabel4" text="{i18n>chg_date}" />
+                    <Input id="_IDGenInput3" value="{Laatst geupdatet}" />
+                    <Label id="_IDGenLabel5" text="{i18n>User}." />
+                    <Input id="_IDGenInput4" value="{User}" />
+                    <Label id="_IDGenLabel6" text="{i18n>partner}." />
+                    <Input id="_IDGenInput5" value="{Partner}" />
+                    <Label id="_IDGenLabel7" text="{i18n>location}." />
+                    <Input id="_IDGenInput6" value="{Locatie}" />
+                    <Label id="_IDGenLabel8" text="{i18n>finished}." />
+                    <Input id="_IDGenInput7" value="{Afgewerkt}" />
+                </f:content>
+            </f:SimpleForm>
+        </semantic:content>
+        <semantic:footerCustomActions>
+			<Button id="_IDGenButton1" text="Save" press="onSave" />
+        </semantic:footerCustomActions>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
