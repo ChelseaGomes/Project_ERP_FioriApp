@@ -50,27 +50,31 @@
         <semantic:content>
              <f:SimpleForm id="_IDGenSimpleForm1">
                 <f:content>
-                    <Label id="_IDGenLabel1" text="{i18n>id}" />
-                    <Text id="_IDGenText1" text="{ID}" />
-                    <Label id="_IDGenLabel2" text="{i18n>type}" />
+                    <Label id="_IDGenLabel1" text="{i18n>id}"  />
+                    <Text id="_IDGenText1" text="{Id}"  />
+                    <Label id="_IDGenLabel2" text="{i18n>type}"  />
                     <Input id="_IDGenInput1" value="{Type}" />
-                    <Label id="_IDGenLabel3" text="{i18n>mov_date}." />
-                    <Input id="_IDGenInput2" value="{Datum}" />
+                    <Label id="_IDGenLabel3" text="{i18n>mov_date}" />
+                     <Input id="_IDGenInput2" value="{mov_date}" />
                     <Label id="_IDGenLabel4" text="{i18n>chg_date}" />
-                    <Input id="_IDGenInput3" value="{Laatst geupdatet}" />
-                    <Label id="_IDGenLabel5" text="{i18n>User}." />
-                    <Input id="_IDGenInput4" value="{User}" />
-                    <Label id="_IDGenLabel6" text="{i18n>partner}." />
+                     <Input id="_IDGenInput3" value="{Chg_date}" />
+                    <Label id="_IDGenLabel5" text="{i18n>chg_user}" />
+                    <Input id="_IDGenInput4" value="{Chg_user}"  />
+                    <Label id="_IDGenLabel6" text="{i18n>partner}" />
                     <Input id="_IDGenInput5" value="{Partner}" />
-                    <Label id="_IDGenLabel7" text="{i18n>location}." />
-                    <Input id="_IDGenInput6" value="{Locatie}" />
-                    <Label id="_IDGenLabel8" text="{i18n>finished}." />
-                    <Input id="_IDGenInput7" value="{Afgewerkt}" />
+                    <Label id="_IDGenLabel7" text="{i18n>location}" />
+                    <Input id="_IDGenInput6" value="{Location}" />
+                    <Label id="_IDGenLabel8" text="{i18n>finished}" />
+                    <Input id="_IDGenInput7" value="{Finished}" />
+                  
+                  
                 </f:content>
             </f:SimpleForm>
         </semantic:content>
         <semantic:footerCustomActions>
-			<Button id="_IDGenButton1" text="Save" press="onSave" />
+			<Button id="_IDGenButton1" text="Opslaan" press="onSave" />
+            <Button id="_IDGenButton2" text="Verwijder" press="onDelete" visible="{= !${detailView>/new} }"/>
+			<Button id="_IDGenButton3" text="Cancel" press="onCancel" visible="{detailView>/new}"/>
         </semantic:footerCustomActions>
 
     </semantic:SemanticPage>

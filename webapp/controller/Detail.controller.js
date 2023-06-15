@@ -75,6 +75,29 @@ sap.ui.define(
         });
       },
 
+      onDelete: function () {
+        this.getModel("detailView").setProperty("/busy", true);
+        this.getModel().remove(this.getView().getBindingContext().getPath(), {
+          success: (result) => {
+            this.getModel("detailView").setProperty("/busy", false);
+            sap.m.MessageToast.show(
+              this.getResourceBundle().getText("deleted")
+            );
+            this.getRouter().navTo("list");
+          },
+          error: (error) => {
+            this.getModel("detailView").setProperty("/busy", false);
+            console.error(error);
+            sap.m.MessageBox.error(error.responseText);
+          },
+        });
+      },
+
+      onCancel: function () {
+        this.getModel().resetChanges();
+        this.getRouter().navTo("list");
+      },
+
       _onObjectMatched: function (oEvent) {
         this.getModel("detailView").setProperty("/new", false);
 
@@ -90,11 +113,14 @@ sap.ui.define(
           // this.getView().setModel(model);
           const bindingContext = model.createEntry("/MovementSet", {
             properties: {
-              Id: "new",
-              Type: "new",
-              Date: "new",
-              Partner: "new",
-              Location: "new",
+              Id: "",
+              Type: "",
+              Datum: "",
+              chg_datum: "",
+              User: "",
+              Partner: "",
+              Location: "",
+              Afgewerkt: "",
             },
           });
 
@@ -201,7 +227,7 @@ sap.ui.define(
           false
         );
         // No item should be selected on list after detail page is closed
-        this.getOwnerComponent().oListSelector.clearListListSelection();
+        // this.getOwnerComponent().oListSelector.clearListListSelection();
         this.getRouter().navTo("list");
       },
 
@@ -228,15 +254,11 @@ sap.ui.define(
           );
         } else {
           // reset to previous layout
-          this.getModel("appView").setProperty(
-            "/layout",
-            this.getModel("appView").getProperty("/previousLayout")
-          );
-          this.getModel("appView").setProperty(
-            "/layout",
-            this.getModel("appView").getProperty("/previousLayout")
-          );
         }
+        this.getModel("appView").setProperty(
+          "/layout",
+          this.getModel("appView").getProperty("/previousLayout")
+        );
       },
     });
   }
