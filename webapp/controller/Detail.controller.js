@@ -157,6 +157,7 @@ sap.ui.define(
         oViewModel.setProperty("/busy", false);
         this.getView().bindElement({
           path: sObjectPath,
+          parameters: { expand: "" }, //hier moet de movitemset staan maar ik krijg de foutmelding niet weggewerkt
           events: {
             change: this._onBindingChange.bind(this),
             dataRequested: function () {
