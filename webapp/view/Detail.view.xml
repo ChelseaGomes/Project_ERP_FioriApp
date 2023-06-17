@@ -1,4 +1,4 @@
-<mvc:View
+<mvc:View xmlns:smartform="sap.ui.comp.smartform"
     controllerName="projecterp.controller.Detail"
     xmlns="sap.m"
     xmlns:semantic="sap.f.semantic"
@@ -55,23 +55,25 @@
                     <Label id="_IDGenLabel9" text="{i18n>ID}"  />
                   <Text id="_IDGenText3" text="{Id}"/>
                     <Label id="_IDGenLabel2" text="{i18n>Type}"  />
-                    <Input id="_IDGenInput1" value="{Type}" />
+                    <Input id="_IDGenInput1" value="{Type}" placeholder="Geef het type van verplaatsing" />
                     <Label id="_IDGenLabel3" text="{i18n>Datum}" />
-                   <Input id="_IDGenInput2" value="{MovDate}"    />
+                   <Input id="_IDGenInput2" value="{MovDate}" placeholder="Geef de datum van de verplaatsing"   />
                     <Label id="_IDGenLabel4" text="{i18n>ChgDatum}" />
-                    <Input id="_IDGenInput3" value="{ChgDate}"  />
+                    <Input id="_IDGenInput3" value="{ChgDate}" placeholder="Geef de chg_datum"  />
+                    
                     <Label id="_IDGenLabel5" text="{i18n>ChgUser}" />
-                    <Input id="_IDGenInput4" value="{ChgUser}"  />
+                    <Input id="_IDGenInput4" value="{ChgUser}" placeholder="Geef de user" />
                     <Label id="_IDGenLabel6" text="{i18n>Partner}" />
-                    <Input id="_IDGenInput5" value="{Partner}" />
+                    <Input id="_IDGenInput5" value="{Partner}" placeholder="Geef de partner" />
                     <Label id="_IDGenLabel7" text="{i18n>Locatie}" />
-                    <Input id="_IDGenInput6" value="{Location}" />
+                    <Input id="_IDGenInput6" value="{Location}" placeholder="Geef de locatie" />
                     <Label id="_IDGenLabel8" text="{i18n>Afgewerkt}" />
-                    <Input id="_IDGenInput7" value="{Finished}" />
+                    <Input id="_IDGenInput7" value="{Finished}" placeholder="Afgewerkt (true or false)" />
                   </f:content>
                 </f:SimpleForm>
 
-                <Table id="_IDGenTable1" inset="false" items="{ path: 'Lading' }">
+                <Table id="_IDGenTable1" inset="false" items="{ path: 'Lading' }" >
+                
                     <headerToolbar>
                         <OverflowToolbar id="_IDGenOverflowToolbar1">
                             <content>
@@ -84,8 +86,13 @@
                             <Text id="_IDGenText1" text="{i18n>ItemID}" />
                         </Column>
                         <Column id="_IDGenColumn2" hAlign="End">
-                            <Text id="_IDGenText2" text="{i18n>MatNr}" />
+                            <Text id="_IDGenText2" text="{i18n>MateriaalNr}" />
                         </Column>
+                         
+                         <Column id="_IDGenColumn4">
+                            <Text id="_IDGenText5" text="{i18n>Aantal}" />
+                        </Column>
+
                     </columns>
                     <items>
                         <ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle">
