@@ -49,5 +49,5 @@ A Fiori application.
 
 EXTRA OPMERKING (functionaliteiten die ik niet gedebuged kreeg) 
 - Vanonder in de applicatie zou normaal gezien de lading te zien krijgen met het product en hoeveel het aan lading is. Deze is niet zichtbaar vanwege in fout in mijn SAP project. In mijn table ZSD_11_MOV_ITEM zou er eigenlijk bij 'Input Help/Check' bij 'Check tabel' in de colom van mov_id de table ZSD_11_MOVEMENT staan om het mov id's met elkaar te vergelijken. Dit omdat ik de objecten (met id) zelf hebben ingevuld in mijn eigen tabel dus moeten ze ook in mijn tabel gecheckt worden en niet in de table van ZSD_000_MOVEMENT. Ik kreeg dit niet meer aangepast. Er staat nu nodata omdat ze met de verkeerde tabel aan het vergelijken is.
-- Date format zou ik ook nog graag anders hadden gedaan. Nu staat de volledige datum en niet in DD/MM/YYYY waardoor je bij het aanmaken ook volledig alles moet ingeven wat absoluut niet handig is
+- Zoals u wel zal zien beginnen alle projecten/klasses/structures/... in ZSD_011_PROJECTOPDRACHT met ZSD_11_... ipv ZSD_011_... Dit is omdat ik een package had verwijderd en opnieuw wou beginnen maar de namen al gebruikt waren
 
