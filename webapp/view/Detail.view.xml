@@ -57,10 +57,9 @@
                     <Label id="_IDGenLabel2" text="{i18n>Type}"  />
                     <Input id="_IDGenInput1" value="{Type}" placeholder="Geef het type van verplaatsing" />
                     <Label id="_IDGenLabel3" text="{i18n>Datum}" />
-                   <Input id="_IDGenInput2" value="{MovDate}" placeholder="Geef de datum van de verplaatsing"   />
+                    <DatePicker id="_IDGenDatePicker1" value="{path:'MovDate', type: 'sap.ui.model.type.Date'}" displayFormat="dd.MM.yyyy"></DatePicker>
                     <Label id="_IDGenLabel4" text="{i18n>ChgDatum}" />
-                    <Input id="_IDGenInput3" value="{ChgDate}" placeholder="Geef de chg_datum"  />
-                    
+                    <DatePicker id="_IDGenDatePicker" value="{path:'ChgDate', type: 'sap.ui.model.type.Date'}" displayFormat="dd.MM.yyyy"></DatePicker>
                     <Label id="_IDGenLabel5" text="{i18n>ChgUser}" />
                     <Input id="_IDGenInput4" value="{ChgUser}" placeholder="Geef de user" />
                     <Label id="_IDGenLabel6" text="{i18n>Partner}" />
